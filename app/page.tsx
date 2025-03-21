@@ -1,3 +1,11 @@
+import Hero from "@/components/home/Hero";
+import PromoBanner from "@/components/home/PromoBanner";
+
 export default function Home() {
-  return <div>test</div>;
+  return (
+    <div>
+      <Hero />
+      <PromoBanner />
+    </div>
+  );
 }
