@@ -21,12 +21,7 @@ const ProductGrid = ({
             className="flex flex-col space-y-3 px-10 lg:px-0"
           >
             <div className="w-full aspect-square relative">
-              <Image
-                src={image}
-                alt={name}
-                fill
-                className="object-cover rounded"
-              />
+              <Image src={image} alt={name} width={590} height={110} />
             </div>
             <div className="flex flex-col   space-y-2 h-full">
               <div className="flex flex-row items-center justify-between gap-x-20">
