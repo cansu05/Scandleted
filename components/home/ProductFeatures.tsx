@@ -7,9 +7,8 @@ const ProductFeatures = () => {
         <Image
           src="/images/hero-img-3.png"
           alt="hero3"
-          width={0}
-          height={0}
-          className="w-full"
+          width={1200}
+          height={500}
         />
         <p className="text-base tracking-wider w-80">
           We make products with quality materials so you get a very good product
