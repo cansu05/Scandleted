@@ -9,7 +9,7 @@ import { NavSearch } from "./NavSearch";
 const Navbar = () => {
   return (
     <nav>
-      <Container className="flex items-center justify-between py-3">
+      <Container className="flex items-center justify-between py-3 lg:px-0 px-5">
         <div className="w-1/3 flex justify-start">
           <LinksDropdown />
           <NavLinks />

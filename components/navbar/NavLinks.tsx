@@ -6,7 +6,7 @@ const NavLinks = () => {
     <div className=" flex-row flex-wrap gap-4 lg:flex hidden">
       {links.map((link) => {
         return (
-          <Link key={link.href} href={link.href}>
+          <Link key={link.id} href={link.href}>
             {link.label}
           </Link>
         );
