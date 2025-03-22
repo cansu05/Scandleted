@@ -26,7 +26,7 @@ const ProductGrid = ({
                 alt="name"
                 width={0}
                 height={0}
-                className="w-full"
+                className="w-full h-auto object-cover"
               />
             </div>
             <div className="flex flex-col   space-y-2 h-full">
