@@ -20,13 +20,12 @@ const ProductGrid = ({
             key={productID}
             className="flex flex-col space-y-3 px-10 lg:px-0"
           >
-            <div className="w-full">
+            <div className="w-full aspect-square relative">
               <Image
                 src={image}
                 alt={name}
-                width={500}
-                height={500}
-                className="w-full h-auto object-cover"
+                fill
+                className="object-cover rounded"
               />
             </div>
             <div className="flex flex-col   space-y-2 h-full">
