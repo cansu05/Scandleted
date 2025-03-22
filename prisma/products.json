@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Brown Relac",
+    "description": "Together in the afternoon",
+    "featured": true,
+    "image": "/images/product-1.png",
+    "price": 33
+  },
+  {
+    "name": "Moon Morning",
+    "description": "The night with scent in the morning",
+    "featured": true,
+    "image": "/images/product-2.png",
+    "price": 34
+  },
+  {
+    "name": "Vanilla Relax",
+    "description": "Cake Smell",
+    "featured": true,
+    "image": "/images/product-3.png",
+    "price": 20
+  },
+  {
+    "name": "Beach Sunshine",
+    "description": "Enjoy the afternoon",
+    "featured": false,
+    "image": "/images/product-4.png",
+    "price": 40
+  },
+  {
+    "name": "Moonlight Aurora",
+    "description": "Aurora in North Pole",
+    "featured": false,
+    "image": "/images/product-5.png",
+    "price": 40
+  },
+  {
+    "name": "Woman Secret",
+    "description": "Woman smell",
+    "featured": true,
+    "image": "/images/product-6.png",
+    "price": 38
+  }
+]

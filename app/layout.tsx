@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Zilla_Slab } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar/Navbar";
 import Container from "@/components/global/Container";
+import Footer from "@/components/footer/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,6 +36,7 @@ export default function RootLayout({
       <body className={` ${zillaSlab.variable} antialiased`}>
         <Navbar />
         <Container>{children}</Container>
+        <Footer />
       </body>
     </html>
   );

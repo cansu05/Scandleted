@@ -4,9 +4,9 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: #f9f5ea;
+  --background: #fbf8f0;
+  --bg-hero: #f9f5ea;
   --foreground: #0c0d12;
-  --btn-border: #0c0d12;
   --secondary: #ecdfdb;
   --border: #c9a489;
   --heading: #c9a489;

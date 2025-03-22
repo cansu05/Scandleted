@@ -12,7 +12,10 @@ const Hero = () => {
           height={110}
         />
       </div>
-      <div className="flex flex-col justify-center items-start px-20 gap-y-5">
+      <div
+        style={{ backgroundColor: "var(--bg-hero)" }}
+        className="flex flex-col justify-center items-start px-20 gap-y-5 h-full"
+      >
         <div>
           <p
             style={{ color: "var(--text)" }}

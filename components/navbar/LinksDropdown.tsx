@@ -24,7 +24,7 @@ const LinksDropdown = () => {
         <DropdownMenuContent>
           {links.map((link) => {
             return (
-              <DropdownMenuItem key={link.href}>
+              <DropdownMenuItem key={link.id}>
                 <Link href={link.href}>{link.label}</Link>
               </DropdownMenuItem>
             );
