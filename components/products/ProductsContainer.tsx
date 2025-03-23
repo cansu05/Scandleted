@@ -4,7 +4,7 @@ import { Suspense } from "react";
 import LoadingContainer from "../global/LoadingContainer";
 
 const ProductsContainer = async ({ search }: { search: string }) => {
-  const products = await fetchAllProducts();
+  const products = await fetchAllProducts({ search });
   return (
     <div className="mt-10 ">
       <div className="text-start mb-10 lg:px-0 px-10">

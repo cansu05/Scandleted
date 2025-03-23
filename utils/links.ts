@@ -5,7 +5,7 @@ type Links = {
 };
 
 export const links: Links[] = [
-  { id: 1, href: "/product", label: "SHOP" },
+  { id: 1, href: "/products", label: "SHOP" },
   { id: 2, href: "/about", label: "ABOUT" },
   { id: 3, href: "/blog", label: "BLOG" },
   { id: 4, href: "/testimonials", label: "TESTIMONIALS" },
