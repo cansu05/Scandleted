@@ -1,18 +1,15 @@
 import ProductsContainer from "@/components/products/ProductsContainer";
 
-const ProductsPage = async ({
+const ProductsPage = ({
   searchParams,
 }: {
-  searchParams?: { [key: string]: string | string[] | undefined };
+  searchParams: { search?: string };
 }) => {
-  const search =
-    typeof searchParams?.search === "string" ? searchParams.search : "";
-
+  const search = searchParams.search || "";
   return (
     <div>
       <ProductsContainer search={search} />
     </div>
   );
 };
-
 export default ProductsPage;
