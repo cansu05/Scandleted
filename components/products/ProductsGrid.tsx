@@ -3,7 +3,7 @@ import { Product } from "@prisma/client";
 import Image from "next/image";
 import AddToCartButton from "../buton/AddToCartButton";
 
-const ProductGrid = ({
+const ProductsGrid = ({
   products,
   className,
 }: {
@@ -42,4 +42,4 @@ const ProductGrid = ({
     </div>
   );
 };
-export default ProductGrid;
+export default ProductsGrid;
