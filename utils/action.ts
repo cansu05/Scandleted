@@ -8,8 +8,11 @@ export const fetchFeaturedProducts = () => {
   });
 };
 
-export const fetchAllProducts = () => {
+export const fetchAllProducts = ({ search = "" }: { search: string }) => {
   return db.product.findMany({
+    where: {
+      OR: [{ name: { contains: search, mode: "insensitive" } }],
+    },
     orderBy: {
       createdAt: "desc",
     },
