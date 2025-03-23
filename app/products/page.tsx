@@ -1,15 +1,16 @@
 import ProductsContainer from "@/components/products/ProductsContainer";
 
-const ProductsPage = ({
-  searchParams,
-}: {
-  searchParams: { search?: string };
-}) => {
-  const search = searchParams.search || "";
+interface ProductsPageProps {
+  searchParams?: Record<string, string | string[] | undefined>;
+}
+
+export default function ProductsPage({ searchParams }: ProductsPageProps) {
+  const search =
+    typeof searchParams?.search === "string" ? searchParams.search : "";
+
   return (
-    <div>
+    <main className="px-4 lg:px-0">
       <ProductsContainer search={search} />
-    </div>
+    </main>
   );
-};
-export default ProductsPage;
+}
