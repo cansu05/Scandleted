@@ -1,10 +1,10 @@
 import ProductsContainer from "@/components/products/ProductsContainer";
 
-interface ProductsPageProps {
-  searchParams?: Record<string, string | string[] | undefined>;
-}
+type PageProps = {
+  searchParams?: { [key: string]: string | string[] | undefined };
+};
 
-export default function ProductsPage({ searchParams }: ProductsPageProps) {
+export default function ProductsPage({ searchParams }: PageProps) {
   const search =
     typeof searchParams?.search === "string" ? searchParams.search : "";
 
