@@ -5,6 +5,6 @@ export default async function ProductsPage({
 }: {
   searchParams: Promise<{ search?: string }>;
 }) {
-  const { search } = await searchParams;
-  return <ProductsContainer search={search || ""} />;
+  const { search = "" } = await searchParams;
+  return <ProductsContainer search={search} />;
 }
