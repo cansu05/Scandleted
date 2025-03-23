@@ -1,9 +1,14 @@
 import ProductsContainer from "@/components/products/ProductsContainer";
 
-const ProductsPage = () => {
+const ProductsPage = ({
+  searchParams,
+}: {
+  searchParams: { search?: string };
+}) => {
+  const search = searchParams.search || "";
   return (
     <div>
-      <ProductsContainer />
+      <ProductsContainer search={search} />
     </div>
   );
 };
