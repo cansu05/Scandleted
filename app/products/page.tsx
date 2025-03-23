@@ -1,8 +1,8 @@
 import ProductsContainer from "@/components/products/ProductsContainer";
 
-interface Props {
+type Props = {
   searchParams?: { search?: string };
-}
+};
 
 const ProductsPage = async ({ searchParams }: Props) => {
   const search = searchParams?.search || "";
