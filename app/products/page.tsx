@@ -1,12 +1,12 @@
 import ProductsContainer from "@/components/products/ProductsContainer";
 
-interface ProductsPageProps {
-  searchParams: { [key: string]: string | string[] | undefined };
-}
-
-const ProductsPage = ({ searchParams }: ProductsPageProps) => {
+const ProductsPage = async ({
+  searchParams,
+}: {
+  searchParams?: { [key: string]: string | string[] | undefined };
+}) => {
   const search =
-    typeof searchParams.search === "string" ? searchParams.search : "";
+    typeof searchParams?.search === "string" ? searchParams.search : "";
 
   return (
     <div>
