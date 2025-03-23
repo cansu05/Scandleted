@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import Container from "../global/Container";
 import CartButton from "./CartButton";
 import LinksDropdown from "./LinksDropdown";
@@ -20,7 +21,9 @@ const Navbar = () => {
         </div>
 
         <div className="flex w-1/3 justify-end gap-4 items-center">
-          <NavSearch />
+          <Suspense fallback={null}>
+            <NavSearch />
+          </Suspense>
           <CartButton />
           <LoginButton />
         </div>
