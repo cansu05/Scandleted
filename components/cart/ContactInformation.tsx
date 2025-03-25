@@ -13,7 +13,7 @@ const ContactInformation = () => {
             style={{ color: "var(--text)" }}
             className="text-xs tracking-wider"
           >
-            Recipient's Name
+            Recipient&apos;s Name
           </p>
           <h2 className="font-medium text-xl">Sunny Marwah</h2>
           <div className="grid lg:grid-cols-3 sm:grid-cols-3 grid-cols-1 space-y-3 lg:space-y-0 sm:space-y-0">
