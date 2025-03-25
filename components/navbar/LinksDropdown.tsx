@@ -18,7 +18,7 @@ const LinksDropdown = () => {
             alt="cart"
             width={20}
             height={20}
-            className="cursor-pointer w-5 h-5 "
+            className="cursor-pointer w-6 h-6 "
           />
         </DropdownMenuTrigger>
         <DropdownMenuContent>

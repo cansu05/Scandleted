@@ -6,7 +6,7 @@ const Logo = () => {
   return (
     <Button variant="link" asChild>
       <Link href="/">
-        <Image src="/images/Logo.png" alt="logo" width={119} height={20} />
+        <Image src="/images/Logo.png" alt="logo" width={130} height={25} />
       </Link>
     </Button>
   );

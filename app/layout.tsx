@@ -25,9 +25,13 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={` ${zillaSlab.variable} antialiased`}>
+        <body
+          className={`flex flex-col min-h-screen ${zillaSlab.variable} antialiased`}
+        >
           <Navbar />
-          <Container>{children}</Container>
+          <main className="flex-1">
+            <Container>{children}</Container>
+          </main>
           <Footer />
         </body>
       </html>

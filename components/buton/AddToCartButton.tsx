@@ -6,7 +6,7 @@ const AddToCartButton = () => {
     <Button
       variant="outline"
       size="lg"
-      className="items-center rounded-3xl w-full"
+      className="items-center rounded-3xl w-full cursor-pointer"
     >
       ADD TO CART
       <Image src="/icons/circle-plus.svg" alt="add" width={20} height={20} />
