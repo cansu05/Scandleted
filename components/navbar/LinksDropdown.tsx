@@ -7,6 +7,7 @@ import {
 import { links } from "@/utils/links";
 import Image from "next/image";
 import Link from "next/link";
+import LoginButton from "./LoginButton";
 
 const LinksDropdown = () => {
   return (
@@ -29,6 +30,8 @@ const LinksDropdown = () => {
               </DropdownMenuItem>
             );
           })}
+
+          <LoginButton />
         </DropdownMenuContent>
       </DropdownMenu>
     </div>

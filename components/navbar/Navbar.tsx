@@ -25,7 +25,9 @@ const Navbar = () => {
             <NavSearch />
           </Suspense>
           <CartButton />
-          <LoginButton />
+          <div className="hidden lg:block">
+            <LoginButton />
+          </div>
         </div>
       </Container>
     </nav>

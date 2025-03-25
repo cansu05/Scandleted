@@ -13,7 +13,7 @@ const LoginButton = () => {
         <SignUpButton mode="modal">
           <Button
             variant="outline"
-            className=" hidden lg:flex border-foreground rounded-3xl font-normal text-sm hover:bg-secondary hover:border-none w-24 cursor-pointer"
+            className="lg:flex border-foreground rounded-3xl font-normal text-sm hover:bg-secondary hover:border-none w-24 cursor-pointer"
           >
             LOG IN
           </Button>
@@ -22,7 +22,7 @@ const LoginButton = () => {
         <SignOutButton>
           <Button
             variant="outline"
-            className=" hidden lg:flex border-foreground rounded-3xl font-normal text-sm hover:bg-secondary hover:border-none w-24 cursor-pointer"
+            className="lg:flex border-foreground rounded-3xl font-normal text-sm hover:bg-secondary hover:border-none w-24 cursor-pointer"
           >
             LOG OUT
           </Button>
