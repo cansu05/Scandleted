@@ -25,7 +25,7 @@ const FeaturedProducts = async () => {
         }
       >
         <ProductsGrid
-          className="lg:grid-cols-4 sm:grid-cols-1"
+          className="lg:grid-cols-4 grid-cols-1"
           products={products}
         />
       </Suspense>

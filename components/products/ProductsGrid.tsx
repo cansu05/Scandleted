@@ -1,7 +1,7 @@
 import { formatCurrency } from "@/utils/format";
 import { Product } from "@prisma/client";
 import Image from "next/image";
-import AddToCartButton from "../buton/AddToCartButton";
+import AddToCartButton from "../button/AddToCartButton";
 
 const ProductsGrid = ({
   products,
@@ -11,14 +11,18 @@ const ProductsGrid = ({
   className?: string;
 }) => {
   return (
-    <div className={`grid space-y-8 lg:space-y-0 gap-x-5 ${className ?? ""}`}>
+    <div
+      className={`grid max-w-xl lg:max-w-full mx-auto space-y-8 lg:space-y-0 gap-x-5 ${
+        className ?? ""
+      }`}
+    >
       {products.map((product) => {
         const { id: productID, name, image, price, description } = product;
         const formatPrice = formatCurrency(price);
         return (
           <div
             key={productID}
-            className="flex flex-col space-y-3 px-10 lg:px-0"
+            className="flex flex-col max-w-xl  space-y-3 px-10 lg:px-0"
           >
             <div className="w-full aspect-square relative">
               <Image src={image} alt={name} width={590} height={110} />
