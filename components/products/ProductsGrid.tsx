@@ -2,6 +2,7 @@ import { formatCurrency } from "@/utils/format";
 import { Product } from "@prisma/client";
 import Image from "next/image";
 import AddToCartButton from "../button/AddToCartButton";
+import Link from "next/link";
 
 const ProductsGrid = ({
   products,
@@ -17,29 +18,32 @@ const ProductsGrid = ({
       }`}
     >
       {products.map((product) => {
-        const { id: productID, name, image, price, description } = product;
+        const { id: productId, name, image, price, description } = product;
         const formatPrice = formatCurrency(price);
         return (
           <div
-            key={productID}
-            className="flex flex-col max-w-xl  space-y-3 px-10 lg:px-0"
+            key={productId}
+            className="flex flex-col justify-between max-w-xl  space-y-3 px-10 lg:px-0"
           >
-            <div className="w-full aspect-square relative">
-              <Image src={image} alt={name} width={590} height={110} />
-            </div>
-            <div className="flex flex-col   space-y-2 h-full">
-              <div className="flex flex-row items-center justify-between gap-x-20">
-                <h5 className="text-xl font-semibold tracking-wide">{name}</h5>
-                <h6 className="  font-light tracking-wider">{formatPrice}</h6>
+            <Link href={`products/${productId}`}>
+              <div className="w-full aspect-square relative">
+                <Image src={image} alt={name} width={590} height={110} />
               </div>
-              <div className="h-full">
-                <p className="text-base text-foreground tracking-wider text-start">
-                  {description}
-                </p>
+              <div className="flex flex-col mt-2 space-y-2 h-full">
+                <div className="flex flex-row items-center justify-between gap-x-20">
+                  <h5 className="text-xl font-semibold tracking-wide">
+                    {name}
+                  </h5>
+                  <h6 className="  font-light tracking-wider">{formatPrice}</h6>
+                </div>
+                <div className="h-full">
+                  <p className="text-base text-foreground tracking-wider text-start">
+                    {description}
+                  </p>
+                </div>
               </div>
-
-              <AddToCartButton />
-            </div>
+            </Link>
+            <AddToCartButton />
           </div>
         );
       })}

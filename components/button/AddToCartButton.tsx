@@ -1,15 +1,17 @@
-import Image from "next/image";
+import { cn } from "@/lib/utils";
 import { Button } from "../ui/button";
 
-const AddToCartButton = () => {
+const AddToCartButton = ({ className }: { className?: string }) => {
   return (
     <Button
       variant="outline"
       size="lg"
-      className="items-center rounded-3xl w-full cursor-pointer"
+      className={cn(
+        "items-center rounded-3xl w-full cursor-pointer",
+        className
+      )}
     >
       ADD TO CART
-      <Image src="/icons/circle-plus.svg" alt="add" width={20} height={20} />
     </Button>
   );
 };
