@@ -27,8 +27,14 @@ const ProductsGrid = ({
           >
             <Link href={`products/${productId}`}>
               <div className="w-full aspect-square relative">
-                <Image src={image} alt={name} width={590} height={110} />
+                <Image
+                  src={image}
+                  alt={name}
+                  fill
+                  className="object-cover rounded-md"
+                />
               </div>
+
               <div className="flex flex-col mt-2 space-y-2 h-full">
                 <div className="flex flex-row items-center justify-between gap-x-20">
                   <h5 className="text-xl font-semibold tracking-wide">
