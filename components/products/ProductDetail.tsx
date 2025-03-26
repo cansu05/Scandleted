@@ -11,16 +11,16 @@ const ProductDetail = async ({ productId }: { productId: string }) => {
   const { name, image, price, description } = product;
   const formatPrice = formatCurrency(price);
   return (
-    <section className="mt-10">
+    <section className="mt-10 lg:px-0 px-5 items-center">
       <BreadCrumbs name={product.name} />
-      <div className="grid grid-cols-2 gap-x-15 mt-10">
-        <div className="grid grid-cols-2 gap-6 w-full ">
-          <Image src={image} alt={name} width={300} height={110} />
-          <Image src={image} alt={name} width={300} height={110} />
-          <Image src={image} alt={name} width={300} height={110} />
-          <Image src={image} alt={name} width={300} height={110} />
+      <div className="grid lg:grid-cols-2 grid-cols-1 gap-x-15 mt-10">
+        <div className="grid grid-cols-2 gap-4 lg:gap-6 w-full">
+          <Image src={image} alt={name} width={400} height={110} />
+          <Image src={image} alt={name} width={400} height={110} />
+          <Image src={image} alt={name} width={400} height={110} />
+          <Image src={image} alt={name} width={400} height={110} />
         </div>
-        <div className="flex flex-col space-y-4">
+        <div className="flex flex-col space-y-4 lg:mt-0 mt-5">
           <div className="flex flex-row items-center justify-between gap-x-20">
             <h1 className="text-3xl font-semibold tracking-wide">{name}</h1>
             <h6 className="text-xl  font-light tracking-wider">
@@ -34,7 +34,7 @@ const ProductDetail = async ({ productId }: { productId: string }) => {
           </div>
           <div className="flex flex-row justify-between">
             <ProductCountButton className="h-12" />
-            <AddToCartButton className="bg-foreground border-none h-12 max-w-105 text-white hover:bg-secondary" />
+            <AddToCartButton className="bg-foreground border-none h-12 lg:max-w-105 max-w-70 text-white hover:bg-secondary" />
           </div>
           <Accordions />
         </div>
