@@ -1,7 +1,5 @@
 import { fetchAllProducts } from "@/utils/action";
 import ProductsGrid from "./ProductsGrid";
-import { Suspense } from "react";
-import LoadingContainer from "../global/LoadingContainer";
 
 const ProductsContainer = async ({ search }: { search: string }) => {
   const products = await fetchAllProducts({ search });
