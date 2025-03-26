@@ -1,11 +1,13 @@
 import ProductDetail from "@/components/products/ProductDetail";
 
 const SingleProductPage = async ({
-  searchParams,
+  params,
 }: {
-  searchParams: Promise<{ id: string }>;
+  params: Promise<{ id: string }>;
 }) => {
-  const { id } = await searchParams;
+  const { id } = await params;
+
+  console.log(id);
 
   return (
     <section>
