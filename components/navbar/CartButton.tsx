@@ -7,7 +7,7 @@ const CartButton = () => {
   return (
     <Button asChild variant="link" size="icon" className="flex relative">
       <Link href="/cart">
-        <Image src="/icons/bag.svg" alt="cart" width={20} height={20} />
+        <Image src="/icons/bag.svg" alt="cart" width={26} height={26} />
         <span className="absolute -top-1 -right-1 bg-foreground rounded-full h-4 w-4 flex items-center justify-center text-xs text-white">
           {numItemsInCart}
         </span>

@@ -7,6 +7,7 @@ import {
 import { links } from "@/utils/links";
 import Image from "next/image";
 import Link from "next/link";
+import LoginButton from "./LoginButton";
 
 const LinksDropdown = () => {
   return (
@@ -18,7 +19,7 @@ const LinksDropdown = () => {
             alt="cart"
             width={20}
             height={20}
-            className="cursor-pointer w-5 h-5 "
+            className="cursor-pointer w-6 h-6 "
           />
         </DropdownMenuTrigger>
         <DropdownMenuContent>
@@ -29,6 +30,8 @@ const LinksDropdown = () => {
               </DropdownMenuItem>
             );
           })}
+
+          <LoginButton />
         </DropdownMenuContent>
       </DropdownMenu>
     </div>

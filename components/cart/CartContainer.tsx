@@ -1,12 +1,14 @@
-"use client";
-
-import { useAuth } from "@clerk/clerk-react";
+import { auth } from "@clerk/nextjs/server";
 import { SignInButton } from "@clerk/nextjs";
 import { Button } from "../ui/button";
-export default function Cart() {
-  const { isSignedIn } = useAuth();
+import ShoppingCart from "./ShoppingCart";
+import ContactInformation from "./ContactInformation";
+import Payment from "./Payment";
 
-  if (!isSignedIn) {
+export default async function Cart() {
+  const { userId } = await auth();
+
+  if (!userId) {
     return (
       <div className="flex justify-center items-center h-64">
         <SignInButton mode="modal">
@@ -18,5 +20,15 @@ export default function Cart() {
     );
   }
 
-  return <div>Protected Cart Content</div>;
+  return (
+    <section className="grid grid-cols-1 lg:grid-cols-2 mt-10 gap-x-10 lg:p-0 p-5 space-y-5 lg:space-y-0">
+      <div className="flex flex-col space-y-10">
+        <ShoppingCart />
+        <ContactInformation />
+      </div>
+      <div>
+        <Payment />
+      </div>
+    </section>
+  );
 }

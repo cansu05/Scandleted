@@ -38,9 +38,9 @@ export const NavSearch = () => {
         <Image
           src="/icons/search-normal.svg"
           alt="cart"
-          width={20}
-          height={20}
-          className="cursor-pointer w-5 h-5 "
+          width={22}
+          height={22}
+          className="cursor-pointer w-6 h-6 "
           onClick={() => setIsSearchVisible(true)}
         />
       ) : (
