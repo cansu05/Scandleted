@@ -3,7 +3,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 const LoadingContainer = ({ products }: { products?: number }) => {
   return (
     <div className="grid space-y-8 lg:space-y-0 gap-x-5 lg:grid-cols-3 sm:grid-cols-2 gap-y-10">
-      {[...Array(products ?? 4)].map((_, i) => (
+      {[...Array(products ?? 6)].map((_, i) => (
         <LoadingProduct key={i} />
       ))}
     </div>

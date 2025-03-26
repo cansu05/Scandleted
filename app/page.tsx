@@ -11,7 +11,10 @@ export default function Home() {
       <Hero />
       <Suspense
         fallback={
-          <LoadingContainer className="lg:grid-cols-4 sm:grid-cols-1" />
+          <LoadingContainer
+            className="lg:grid-cols-4 sm:grid-cols-1"
+            products={4}
+          />
         }
       >
         <FeaturedProducts />
