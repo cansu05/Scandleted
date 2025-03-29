@@ -13,7 +13,7 @@ const ProductsGrid = ({
 }) => {
   return (
     <div
-      className={`grid max-w-xl lg:max-w-full mx-auto space-y-8 lg:space-y-0 gap-x-5 ${
+      className={`grid lg:max-w-full mx-auto space-y-8 lg:space-y-0 lg:gap-x-5  ${
         className ?? ""
       }`}
     >
@@ -23,10 +23,10 @@ const ProductsGrid = ({
         return (
           <div
             key={productId}
-            className="flex flex-col justify-between max-w-xl  space-y-3 px-10 lg:px-0"
+            className="flex flex-col  w-full justify-between max-w-xl sm:px-p px-10 space-y-3  lg:px-0"
           >
             <Link href={`products/${productId}`}>
-              <div className="w-full aspect-square relative">
+              <div className="w-full aspect-square relative ">
                 <Image
                   src={image}
                   alt={name}
