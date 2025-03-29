@@ -14,13 +14,15 @@ const LinksDropdown = () => {
     <div className="lg:hidden ">
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <Image
-            src="/icons/menu.svg"
-            alt="cart"
-            width={22}
-            height={22}
-            className="cursor-pointer "
-          />
+          <div className="relative">
+            <Image
+              src="/icons/menu.svg"
+              alt="cart"
+              width={22}
+              height={22}
+              className="cursor-pointer object-cover "
+            />
+          </div>
         </DropdownMenuTrigger>
         <DropdownMenuContent>
           {links.map((link) => {
