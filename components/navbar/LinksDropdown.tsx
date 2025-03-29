@@ -17,9 +17,9 @@ const LinksDropdown = () => {
           <Image
             src="/icons/menu.svg"
             alt="cart"
-            width={20}
-            height={20}
-            className="cursor-pointer w-6 h-6 "
+            width={22}
+            height={22}
+            className="cursor-pointer "
           />
         </DropdownMenuTrigger>
         <DropdownMenuContent>
