@@ -25,7 +25,7 @@ const ProductCountButton = ({
     startTransition(() => {
       updateCartItemAction({
         amount: newAmount,
-        cartItemId,
+        cartItemId: cartItemId || "",
       })
         .then(() => {
           onAmountChange(newAmount);
