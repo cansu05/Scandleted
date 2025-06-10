@@ -4,9 +4,14 @@ import { Button } from "../ui/button";
 import ShoppingCart from "./ShoppingCart";
 import ContactInformation from "./ContactInformation";
 import Payment from "./Payment";
+import { fetchOrCreateCart, updateCart } from "@/utils/action";
+import { redirect } from "next/navigation";
 
 export default async function Cart() {
   const { userId } = await auth();
+  if (!userId) redirect("/");
+  const previousCart = await fetchOrCreateCart({ userId });
+  const cart = await updateCart(previousCart);
 
   if (!userId) {
     return (
@@ -23,11 +28,11 @@ export default async function Cart() {
   return (
     <section className="grid grid-cols-1 lg:grid-cols-2 mt-10 gap-x-10 lg:p-0 p-5 space-y-5 lg:space-y-0">
       <div className="flex flex-col space-y-10">
-        <ShoppingCart />
+        <ShoppingCart cartItems={cart.cartItems} />
         <ContactInformation />
       </div>
       <div>
-        <Payment />
+        <Payment cart={cart.currentCart} />
       </div>
     </section>
   );

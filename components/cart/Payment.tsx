@@ -1,7 +1,10 @@
 import { Separator } from "@radix-ui/react-dropdown-menu";
 import CheckoutButton from "./CheckoutButton";
+import { Cart } from "@prisma/client";
 
-const Payment = () => {
+const Payment = ({ cart }: { cart: Cart }) => {
+  const { shipping, tax, cartTotal, orderTotal } = cart;
+  console.log(cart);
   return (
     <div
       style={{ backgroundColor: "var(--bg-hero)" }}
@@ -16,7 +19,7 @@ const Payment = () => {
           >
             Subtotal
           </p>
-          <p className="font-bold text-sm">$20.00</p>
+          <p className="font-bold text-sm">${cartTotal}</p>
         </div>
 
         <div className="flex flex- justify-between ">
@@ -26,7 +29,7 @@ const Payment = () => {
           >
             Shipping
           </p>
-          <p className="font-bold text-sm">$5.00</p>
+          <p className="font-bold text-sm">${shipping}</p>
         </div>
 
         <div className="flex flex- justify-between ">
@@ -36,7 +39,7 @@ const Payment = () => {
           >
             Taxes
           </p>
-          <p className="font-bold text-sm">$10.00</p>
+          <p className="font-bold text-sm">{tax}</p>
         </div>
       </div>
 
@@ -46,7 +49,7 @@ const Payment = () => {
         <p style={{ color: "var(--text)" }} className="text-lg tracking-wider">
           Total
         </p>
-        <p className="font-bold text-lg">$20.00</p>
+        <p className="font-bold text-lg">${orderTotal}</p>
       </div>
 
       <Separator className="border border-secondary w-full" />
