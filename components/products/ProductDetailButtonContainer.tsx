@@ -5,12 +5,12 @@ import ProductCountButton from "../button/ProductCountButton";
 import AddToCartButtonContainer from "../button/AddToCartButtonContainer";
 
 const ProductDetailButtonContainer = ({ productId }: { productId: string }) => {
-  const [amount, setAmount] = useState(5);
+  const [amount, setAmount] = useState(1);
   return (
     <div className="flex flex-row justify-between">
       <ProductCountButton
-        amount={amount}
-        setAmount={setAmount}
+        quantity={amount}
+        onAmountChange={setAmount}
         className="h-12"
       />
       <AddToCartButtonContainer

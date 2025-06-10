@@ -6,7 +6,7 @@ import { updateCartItemAction } from "@/utils/action";
 
 type ProductCountButtonProps = {
   quantity: number;
-  cartItemId: string;
+  cartItemId?: string;
   onAmountChange: (newAmount: number) => void;
   className?: string;
 };
