@@ -16,7 +16,7 @@ function FormContainer({
   children: React.ReactNode;
 }) {
   const [state, formAction] = useActionState(action, initialState);
-
+  console.log(state);
   return <form action={formAction}>{children}</form>;
 }
 export default FormContainer;
