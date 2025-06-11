@@ -5,6 +5,7 @@ import Navbar from "@/components/navbar/Navbar";
 import Container from "@/components/global/Container";
 import Footer from "@/components/footer/Footer";
 import { ClerkProvider } from "@clerk/nextjs";
+import { ReduxProvider } from "@/redux/providers";
 
 const zillaSlab = Zilla_Slab({
   variable: "--font-zilla-slab",
@@ -24,17 +25,19 @@ export default function RootLayout({
 }>) {
   return (
     <ClerkProvider>
-      <html lang="en">
-        <body
-          className={`flex flex-col min-h-screen ${zillaSlab.variable} antialiased`}
-        >
-          <Navbar />
-          <main className="flex-1">
-            <Container>{children}</Container>
-          </main>
-          <Footer />
-        </body>
-      </html>
+      <ReduxProvider>
+        <html lang="en">
+          <body
+            className={`flex flex-col min-h-screen ${zillaSlab.variable} antialiased`}
+          >
+            <Navbar />
+            <main className="flex-1">
+              <Container>{children}</Container>
+            </main>
+            <Footer />
+          </body>
+        </html>
+      </ReduxProvider>
     </ClerkProvider>
   );
 }

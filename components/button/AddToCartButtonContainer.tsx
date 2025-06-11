@@ -14,6 +14,7 @@ const AddToCartButtonContainer = ({
   amount: number;
 }) => {
   const { isSignedIn } = useAuth();
+
   if (!isSignedIn) {
     return (
       <SignUpButton mode="modal">

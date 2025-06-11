@@ -1,20 +1,34 @@
 "use client";
 
 import Image from "next/image";
+import { useEffect, useState } from "react";
+import { useAppDispatch, useAppSelector } from "@/redux/hooks";
+import { fetchCart, updateCartItem } from "@/redux/cart/cartSlice";
 import ProductCountButton from "../button/ProductCountButton";
-import { useState } from "react";
-import { CartItem } from "@prisma/client";
 import DeleteItemButton from "../button/DeleteItemButton";
-const ShoppingCart = ({ cartItems }: { cartItems: CartItem[] }) => {
-  const [quantities, setQuantities] = useState(
-    Object.fromEntries(cartItems.map((item) => [item.id, item.amount]))
-  );
+
+const ShoppingCart = () => {
+  const dispatch = useAppDispatch();
+  const cartItems = useAppSelector((state) => state.cart.items);
+
+  const [quantities, setQuantities] = useState<{ [key: string]: number }>({});
+
+  useEffect(() => {
+    dispatch(fetchCart());
+  }, [dispatch]);
+
+  useEffect(() => {
+    setQuantities(
+      Object.fromEntries(cartItems.map((item) => [item.id, item.amount]))
+    );
+  }, [cartItems]);
 
   const updateAmount = (id: string, newAmount: number) => {
     setQuantities((prev) => ({
       ...prev,
       [id]: newAmount,
     }));
+    dispatch(updateCartItem({ cartItemId: id, amount: newAmount }));
   };
 
   return (
@@ -25,7 +39,7 @@ const ShoppingCart = ({ cartItems }: { cartItems: CartItem[] }) => {
 
       {cartItems.map((item) => {
         const { id, image, price, productName } = item;
-        const amount = quantities[id];
+        const amount = quantities[id] ?? item.amount;
 
         return (
           <div key={id} className="flex flex-row items-center gap-x-6">
@@ -46,7 +60,7 @@ const ShoppingCart = ({ cartItems }: { cartItems: CartItem[] }) => {
                   onAmountChange={(newAmount) => updateAmount(id, newAmount)}
                 />
                 <p className="tracking-wider font-light text-lg">
-                  ${price * amount}
+                  ${(price * amount).toFixed(2)}
                 </p>
                 <DeleteItemButton id={id} />
               </div>

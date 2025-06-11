@@ -136,6 +136,7 @@ export const updateCart = async (cart: Cart) => {
       numItemsInCart,
       cartTotal,
       tax,
+      shipping,
       orderTotal,
     },
     include: includeProductClause,
