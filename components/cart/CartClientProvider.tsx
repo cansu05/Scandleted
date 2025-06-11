@@ -3,19 +3,19 @@
 import { useEffect } from "react";
 import { useAppDispatch } from "@/redux/hooks";
 import { setCartManually } from "@/redux/cart/cartSlice";
+import { Cart } from "@prisma/client";
 
 const CartClientProvider = ({
   children,
   cart,
 }: {
   children: React.ReactNode;
-  cart: any;
+  cart: Cart;
 }) => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
     dispatch(setCartManually(cart));
-    console.log(cart);
   }, [cart, dispatch]);
 
   return <>{children}</>;
