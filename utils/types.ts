@@ -1,3 +1,9 @@
+import type { CartItem as PrismaCartItem, Product } from "@prisma/client";
+
+export type CartItemWithProduct = PrismaCartItem & {
+  product: Product;
+};
+
 export type actionFunction = (
   prevState: any,
   formData: FormData
