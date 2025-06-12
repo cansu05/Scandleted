@@ -1,8 +1,8 @@
 import { formatCurrency } from "@/utils/format";
 import { Product } from "@prisma/client";
 import Image from "next/image";
-import AddToCartButton from "../button/AddToCartButton";
 import Link from "next/link";
+import AddToCartButtonContainer from "../button/AddToCartButtonContainer";
 
 const ProductsGrid = ({
   products,
@@ -51,7 +51,7 @@ const ProductsGrid = ({
                 </div>
               </div>
             </Link>
-            <AddToCartButton />
+            <AddToCartButtonContainer productId={productId} amount={1} />
           </div>
         );
       })}

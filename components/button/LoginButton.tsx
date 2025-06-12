@@ -6,7 +6,7 @@ import { SignOutButton, useAuth } from "@clerk/clerk-react";
 
 const LoginButton = () => {
   const { isSignedIn } = useAuth();
-  console.log(isSignedIn);
+
   return (
     <>
       {!isSignedIn ? (

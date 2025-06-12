@@ -1,9 +1,10 @@
 import Image from "next/image";
 import { Button } from "../ui/button";
 import Link from "next/link";
+import { fetchCartItems } from "@/utils/action";
 
-const CartButton = () => {
-  const numItemsInCart = 6;
+const CartButton = async () => {
+  const numItemsInCart = await fetchCartItems();
   return (
     <Button asChild variant="link" size="icon" className="flex relative">
       <Link href="/cart">

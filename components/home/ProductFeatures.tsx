@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const ProductFeatures = () => {
   return (
-    <div className="bg-secondary mt-10 flex flex-col justify-center items-center p-10 space-y-5">
+    <div className="bg-secondary mt-10 flex  flex-col justify-center items-center p-10 space-y-5">
       <div className="flex flex-col gap-5">
         <Image
           src="/images/hero-img-3.png"

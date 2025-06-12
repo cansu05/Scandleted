@@ -3,8 +3,7 @@ import BreadCrumbs from "./BreadCrumbs";
 import Image from "next/image";
 import { formatCurrency } from "@/utils/format";
 import Accordions from "./Accordions";
-import AddToCartButton from "../button/AddToCartButton";
-import ProductCountButton from "../cart/ProductCountButton";
+import ProductDetailButtonContainer from "./ProductDetailButtonContainer";
 
 const ProductDetail = async ({ productId }: { productId: string }) => {
   const product = await fetchSingleProduct(productId);
@@ -32,10 +31,7 @@ const ProductDetail = async ({ productId }: { productId: string }) => {
               {description}
             </p>
           </div>
-          <div className="flex flex-row justify-between">
-            <ProductCountButton className="h-12" />
-            <AddToCartButton className="bg-foreground border-none h-12 lg:max-w-105 max-w-70 text-white hover:bg-secondary" />
-          </div>
+          <ProductDetailButtonContainer productId={productId} />
           <Accordions />
         </div>
       </div>

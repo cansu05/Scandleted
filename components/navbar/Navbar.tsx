@@ -1,8 +1,8 @@
 import { Suspense } from "react";
 import Container from "../global/Container";
-import CartButton from "./CartButton";
+import CartButton from "../button/CartButton";
 import LinksDropdown from "./LinksDropdown";
-import LoginButton from "./LoginButton";
+import LoginButton from "../button/LoginButton";
 import Logo from "./Logo";
 import NavLinks from "./NavLinks";
 import { NavSearch } from "./NavSearch";
