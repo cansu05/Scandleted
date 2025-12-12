@@ -24,4 +24,4 @@ Modern bir mum e-ticaret platformu. Kullanıcılar ürünleri inceleyip sepete e
 
 ```bash
 npm install
-npm run dev
+npx expo start
