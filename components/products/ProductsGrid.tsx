@@ -25,7 +25,8 @@ const ProductsGrid = ({
         return (
           <div
             key={productId}
-            className="flex flex-col w-full justify-between max-w-xl px-10 space-y-3 lg:px-0"
+            style={{ backgroundColor: "var(--bg-hero)" }}
+            className="flex flex-col w-full justify-between max-w-xl space-y-3 border border-secondary rounded-[1vw] p-4"
           >
             <Link href={`/products/${productId}`}>
               <div className="w-full aspect-square relative ">
