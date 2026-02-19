@@ -4,7 +4,6 @@ import "./globals.css";
 import Navbar from "@/components/navbar/Navbar";
 import Container from "@/components/global/Container";
 import Footer from "@/components/footer/Footer";
-import { ClerkProvider } from "@clerk/nextjs";
 
 const zillaSlab = Zilla_Slab({
   variable: "--font-zilla-slab",
@@ -23,18 +22,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
-      <html lang="en">
-        <body
-          className={`flex flex-col min-h-screen ${zillaSlab.variable} antialiased`}
-        >
-          <Navbar />
-          <main className="flex-1">
-            <Container>{children}</Container>
-          </main>
-          <Footer />
-        </body>
-      </html>
-    </ClerkProvider>
+    <html lang="en">
+      <body
+        className={`h-screen flex flex-col ${zillaSlab.variable} antialiased`}
+      >
+        <Navbar />
+
+        <main className="flex-1 w-full">
+          <Container className="h-full">{children}</Container>
+        </main>
+
+        <Footer />
+      </body>
+    </html>
   );
 }

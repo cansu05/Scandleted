@@ -8,6 +8,28 @@ generator client {
   provider = "prisma-client-js"
 }
 
+model User {
+  id            String         @id @default(uuid())
+  email         String         @unique
+  passwordHash  String
+  carts         Cart[]
+  refreshTokens RefreshToken[]
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+}
+
+model RefreshToken {
+  id        String   @id @default(uuid())
+  tokenHash String
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  expiresAt DateTime
+  revokedAt DateTime?
+  createdAt DateTime @default(now())
+
+  @@index([userId])
+}
+
 model Product {
   id          String     @id @default(uuid())
   name        String
@@ -22,8 +44,14 @@ model Product {
 
 model Cart {
   id             String     @id @default(uuid())
-  clerkId        String
+  userId         String
+  user           User       @relation(fields: [userId], references: [id], onDelete: Cascade)
   cartItems      CartItem[]
+  contactFullName String?
+  contactAddress  String?
+  contactCity     String?
+  contactPostalCode String?
+  contactPhone    String?
   numItemsInCart Int        @default(0)
   cartTotal      Int        @default(0)
   shipping       Int        @default(5)
@@ -32,6 +60,8 @@ model Cart {
   orderTotal     Int        @default(0)
   createdAt      DateTime   @default(now())
   updatedAt      DateTime   @updatedAt
+
+  @@index([userId])
 }
 
 model CartItem {

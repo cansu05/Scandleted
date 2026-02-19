@@ -5,7 +5,6 @@ Modern bir mum e-ticaret platformu. Kullanıcılar ürünleri inceleyip sepete e
 ## 🚀 Özellikler
 
 ✨ Next.js App Router mimarisi  
-🔐 Clerk Authentication ile kullanıcı yönetimi  
 🛒 Sepet fonksiyonelliği  
 📦 Ürün listeleme ve detay sayfaları  
 ⚡ Server Actions ile hızlı backend işlemleri  
@@ -15,7 +14,6 @@ Modern bir mum e-ticaret platformu. Kullanıcılar ürünleri inceleyip sepete e
 
 - Next.js
 - Prisma
-- Clerk
 - React
 - TypeScript
 - Tailwind CSS
