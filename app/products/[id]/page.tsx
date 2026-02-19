@@ -7,8 +7,6 @@ const SingleProductPage = async ({
 }) => {
   const { id } = await params;
 
-  console.log(id);
-
   return (
     <section>
       <ProductDetail productId={id} />

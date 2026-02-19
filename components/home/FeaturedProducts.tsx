@@ -3,7 +3,16 @@ import ProductsGrid from "../products/ProductsGrid";
 
 const FeaturedProducts = async () => {
   const products = await fetchFeaturedProducts();
-  if (products.length === 0) return null;
+  if (products.length === 0) {
+    return (
+      <section className="mt-10">
+        <p className="text-base tracking-wider text-muted-foreground">
+          Urun bulunamadi.
+        </p>
+      </section>
+    );
+  }
+
   return (
     <section className="mt-10">
       <div className="text-center mb-10">

@@ -7,6 +7,16 @@ import ProductDetailButtonContainer from "./ProductDetailButtonContainer";
 
 const ProductDetail = async ({ productId }: { productId: string }) => {
   const product = await fetchSingleProduct(productId);
+  if (!product) {
+    return (
+      <section className="mt-10 lg:px-0 px-5">
+        <p className="text-base tracking-wider text-muted-foreground">
+          Urun bulunamadi.
+        </p>
+      </section>
+    );
+  }
+
   const { name, image, price, description } = product;
   const formatPrice = formatCurrency(price);
   return (
